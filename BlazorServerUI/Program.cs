@@ -1,3 +1,5 @@
+using MudBlazor.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Todo: Remove duplication of ConnectionStrings in appsettings.json by using the same property in appsettings.json of MinimalApi.
@@ -6,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddMudServices();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<ISqlDataAccess, SqlDataAccess>();
 builder.Services.AddScoped<IUserModel, DisplayUserModel>();
